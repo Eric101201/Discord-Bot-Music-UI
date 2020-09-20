@@ -1,0 +1,28 @@
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\bin\Debug\netcoreapp3.1\Discord Bot music GUI.exe
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\Discord Bot music GUI.csprojAssemblyReference.cache
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\Discord_Bot_music_GUI.Form1.resources
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\Discord_Bot_music_GUI.Properties.Resources.resources
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\Discord Bot music GUI.csproj.GenerateResource.cache
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\Discord Bot music GUI.AssemblyInfoInputs.cache
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\Discord Bot music GUI.AssemblyInfo.cs
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\bin\Debug\netcoreapp3.1\Discord.Net.Commands.dll
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\bin\Debug\netcoreapp3.1\Discord.Net.Core.dll
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\bin\Debug\netcoreapp3.1\Discord.Net.Rest.dll
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\bin\Debug\netcoreapp3.1\Discord.Net.Webhook.dll
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\bin\Debug\netcoreapp3.1\Discord.Net.WebSocket.dll
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\bin\Debug\netcoreapp3.1\System.Interactive.Async.dll
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\bin\Debug\netcoreapp3.1\System.Linq.Async.dll
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\Discord Bot music GUI.csproj.CopyComplete
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\bin\Debug\netcoreapp3.1\Discord Bot music GUI.deps.json
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\bin\Debug\netcoreapp3.1\Discord Bot music GUI.runtimeconfig.json
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\bin\Debug\netcoreapp3.1\Discord Bot music GUI.runtimeconfig.dev.json
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\bin\Debug\netcoreapp3.1\Discord Bot music GUI.dll
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\bin\Debug\netcoreapp3.1\Discord Bot music GUI.pdb
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\Discord Bot music GUI.dll
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\Discord Bot music GUI.pdb
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\Discord Bot music GUI.genruntimeconfig.cache
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\opus.dll
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\Discord Bot music GUI.csproj.CoreCompileInputs.cache
