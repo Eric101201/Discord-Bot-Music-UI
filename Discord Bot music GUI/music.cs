@@ -29,6 +29,7 @@ namespace Discord_Bot_music_GUI
         public static Dictionary<ulong,bool> random=  new  Dictionary<ulong, bool> ();
         public static Dictionary<ulong, string> stop = new Dictionary<ulong, string>();
         public static Dictionary<ulong, bool> skip = new Dictionary<ulong, bool>();
+        public static Dictionary<ulong, bool> break1 = new Dictionary<ulong, bool>();
         [DllImport("kernel32.dll")]
         static extern IntPtr OpenThread(ThreadAccess dwDesiredAccess, bool bInheritHandle, uint dwThreadId);
         [DllImport("kernel32.dll")]
@@ -68,12 +69,19 @@ namespace Discord_Bot_music_GUI
             stop.Add(ChannelId, "false");
             skip.Add(ChannelId, false);
             record.Add(ChannelId, false);
+            break1.Add(ChannelId, false);
             int w = 0;
             while (true)
             {
+                if (break1[ChannelId]) {
+                    ffmpeg.CloseMainWindow();
+                    token.ThrowIfCancellationRequested();
+                    await channel.DisconnectAsync();
+                    break1.Remove(ChannelId);
+                    break; 
+                };
                 DirectoryInfo di = new DirectoryInfo(@"F:\音樂");
                 var files = di.GetFiles();
-                await Task.Delay(5000);
                 if (Description.ToString() != "Disconnected" || Description.ToString() != "Disconnecting")
                 {
                     try
@@ -150,6 +158,7 @@ namespace Discord_Bot_music_GUI
                             }
                             stop[ChannelId] = "Suspend";
                         }
+                        await Task.Delay(5000);
                     }
                     catch (Exception)
                     {

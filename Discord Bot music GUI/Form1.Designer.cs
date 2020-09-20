@@ -46,6 +46,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button8 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -160,7 +161,7 @@
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.button4.Location = new System.Drawing.Point(0, 0);
+            this.button4.Location = new System.Drawing.Point(-3, -1);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(94, 29);
             this.button4.TabIndex = 6;
@@ -171,7 +172,7 @@
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.button5.Location = new System.Drawing.Point(91, 0);
+            this.button5.Location = new System.Drawing.Point(90, -1);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(94, 29);
             this.button5.TabIndex = 6;
@@ -180,7 +181,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(184, 0);
+            this.button6.Location = new System.Drawing.Point(184, -1);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(94, 29);
             this.button6.TabIndex = 6;
@@ -189,34 +190,53 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(279, 0);
+            this.button7.Location = new System.Drawing.Point(274, -1);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(94, 29);
+            this.button7.Size = new System.Drawing.Size(88, 29);
             this.button7.TabIndex = 6;
             this.button7.Text = "🔁";
             this.button7.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.groupBox1.Location = new System.Drawing.Point(450, 735);
+            this.groupBox1.Location = new System.Drawing.Point(442, 735);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(372, 30);
+            this.groupBox1.Size = new System.Drawing.Size(361, 26);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
+            // 
+            // button8
+            // 
+            this.button8.AutoSize = true;
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button8.FlatAppearance.BorderSize = 2;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button8.Location = new System.Drawing.Point(783, 551);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(94, 33);
+            this.button8.TabIndex = 3;
+            this.button8.Text = "斷線";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.dd2);
+            this.button8.MouseLeave += new System.EventHandler(this.button4_MouseLeave);
+            this.button8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.butto4_MouseMove);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1325, 924);
+            this.ClientSize = new System.Drawing.Size(1272, 891);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.comboBox2);
@@ -255,6 +275,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button8;
     }
 }
 

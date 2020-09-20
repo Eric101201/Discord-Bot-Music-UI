@@ -88,6 +88,11 @@ namespace Discord_Bot_music_GUI
             button2.BackColor = System.Drawing.Color.FromArgb(0, 0, 0, 0);
             button2.ForeColor = System.Drawing.Color.Black;
         }
+        private void button4_MouseLeave(object sender, EventArgs e)
+        {
+            button8.BackColor = System.Drawing.Color.FromArgb(0, 0, 0, 0);
+            button8.ForeColor = System.Drawing.Color.Black;
+        }
         private void button_stop(object sender , EventArgs e)
         {
             Program.Stop();
@@ -119,7 +124,7 @@ namespace Discord_Bot_music_GUI
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem.ToString() != null)
+            if (comboBox1.SelectedItem != null)
             {
                 foreach (var i in Program._client.Guilds)
                 {
@@ -138,7 +143,7 @@ namespace Discord_Bot_music_GUI
         }
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem.ToString() != null)
+            if (comboBox1.SelectedItem != null)
             {
                 foreach (var i in Program._client.Guilds)
                 {
@@ -162,6 +167,18 @@ namespace Discord_Bot_music_GUI
         private void dd(object sender, EventArgs e)
         {
             Music.Play(input1["guild"], input1["channel"]);
+            Program.Log2("已連線");
+        }
+        private void dd2(object sender, EventArgs e)
+        {
+            Music.break1[input1["channel"]] = true;
+            Program.Log2("已斷開連線");
+        }
+
+        private void butto4_MouseMove(object sender, MouseEventArgs e)
+        {
+            button8.BackColor = System.Drawing.Color.Black;
+            button8.ForeColor = System.Drawing.Color.White;
         }
     }
 }
