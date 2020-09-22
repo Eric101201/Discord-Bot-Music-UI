@@ -167,6 +167,7 @@
             this.button4.TabIndex = 6;
             this.button4.Text = "⏪";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -178,6 +179,7 @@
             this.button5.TabIndex = 6;
             this.button5.Text = "⏸";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -187,6 +189,7 @@
             this.button6.TabIndex = 6;
             this.button6.Text = "⏩";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -208,7 +211,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.groupBox1.Location = new System.Drawing.Point(442, 735);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(361, 26);
+            this.groupBox1.Size = new System.Drawing.Size(361, 31);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
@@ -235,7 +238,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1272, 891);
+            this.ClientSize = new System.Drawing.Size(1276, 907);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button3);

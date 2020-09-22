@@ -180,5 +180,20 @@ namespace Discord_Bot_music_GUI
             button8.BackColor = System.Drawing.Color.Black;
             button8.ForeColor = System.Drawing.Color.White;
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //暫停播放
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Music.skip[input1["channel"]] = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Music.record[input1["channel"]] = true;
+        }
     }
 }

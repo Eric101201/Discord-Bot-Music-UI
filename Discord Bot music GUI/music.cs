@@ -101,7 +101,6 @@ namespace Discord_Bot_music_GUI
                         };
                         if (IsPlay && stop[ChannelId]== "Resume")
                         {
-                            Program.Log2("w1");
                             foreach (ProcessThread thread in ffmpeg.Threads)
                             {
                                 var pOpenThread = OpenThread(ThreadAccess.SUSPEND_RESUME, false, (uint)thread.Id);
@@ -111,7 +110,6 @@ namespace Discord_Bot_music_GUI
                                 }
                                 ResumeThread(pOpenThread);
                             }
-                            Program.Log2("w1");
                             stop[ChannelId] = "false";
                         };
                         if (IsPlay == false && stop[ChannelId]!= "Suspend")
