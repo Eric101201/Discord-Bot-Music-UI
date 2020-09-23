@@ -17,6 +17,7 @@ namespace Discord_Bot_music_GUI
     {
         public static IntPtr programIntPtr = IntPtr.Zero;
         public static Dictionary<string,ulong> input1 = new Dictionary<string, ulong>();
+        public static Dictionary<ulong,ulong> guilds = new Dictionary<ulong, ulong>();
         public static void Init()
         {
             // 通过类名查找一个窗口，返回窗口句柄。
@@ -88,6 +89,11 @@ namespace Discord_Bot_music_GUI
             button2.BackColor = System.Drawing.Color.FromArgb(0, 0, 0, 0);
             button2.ForeColor = System.Drawing.Color.Black;
         }
+        private void button4_MouseLeave(object sender, EventArgs e)
+        {
+            button8.BackColor = System.Drawing.Color.FromArgb(0, 0, 0, 0);
+            button8.ForeColor = System.Drawing.Color.Black;
+        }
         private void button_stop(object sender , EventArgs e)
         {
             Program.Stop();
@@ -119,7 +125,7 @@ namespace Discord_Bot_music_GUI
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem.ToString() != null)
+            if (comboBox1.SelectedItem != null)
             {
                 foreach (var i in Program._client.Guilds)
                 {
@@ -138,21 +144,43 @@ namespace Discord_Bot_music_GUI
         }
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem.ToString() != null)
+            if (comboBox1.SelectedItem != null)
             {
                 foreach (var i in Program._client.Guilds)
                 {
                     if (i.Name == comboBox1.SelectedItem.ToString())
                     {
                         input1["guild"] = i.Id;
-                        Program.Log2(i.Id.ToString());
                         var guild = Program._client.GetGuild(i.Id);
                         foreach (var w in guild.VoiceChannels)
                         {
                             if (w.Name == comboBox2.SelectedItem.ToString())
                             {
                                 input1["channel"] = w.Id;
-                                Program.Log2(w.Id.ToString());
+                                if (Music.break1.Keys.ToList().Contains(w.Id))
+                                {
+                                    if (Music.random[w.Id])
+                                    {
+                                        button7.Text = "🔀";
+                                    }
+                                    else
+                                    {
+                                        button7.Text = "🔁";
+                                    };
+                                    if (Music.stop[w.Id] == "false")
+                                    {
+                                        button5.Text = "⏸";
+                                    }
+                                    else if (Music.stop[w.Id] == "Suspend")
+                                    {
+                                        button5.Text = "▶";
+                                    }
+                                }
+                                else
+                                {
+                                    button5.Text = "⏸";
+                                    button7.Text = "🔁";
+                                }
                             }
                         }
                     }
@@ -161,7 +189,71 @@ namespace Discord_Bot_music_GUI
         }
         private void dd(object sender, EventArgs e)
         {
-            Music.Play(input1["guild"], input1["channel"]);
+            if (guilds.Keys.ToList().Contains(input1["guild"]))
+            {
+                Music.break1[guilds[input1["guild"]]] = true;
+                guilds.Remove(input1["guild"]);
+                Music.break1.Remove(input1["channel"]);
+            }
+            else if (!Music.break1.Keys.ToList().Contains(input1["channel"]))
+            {
+                Music.Play(input1["guild"], input1["channel"]);
+                Program.Log2("已連線");
+                guilds.Add(input1["guild"],input1["channel"]);
+            }
+        }
+        private void dd2(object sender, EventArgs e)
+        {
+            if (Music.break1.Keys.ToList().Contains(input1["channel"]))
+            {
+                Music.break1[input1["channel"]] = true;
+                Music.break1.Remove(input1["channel"]);
+                Program.Log2("已斷開連線");
+            }
+        }
+
+        private void butto4_MouseMove(object sender, MouseEventArgs e)
+        {
+            button8.BackColor = System.Drawing.Color.Black;
+            button8.ForeColor = System.Drawing.Color.White;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (Music.stop[input1["channel"]] == "false")
+            {
+                Music.stop[input1["channel"]] = "true";
+                button5.Text = "▶";
+            }else if (Music.stop[input1["channel"]] == "Suspend")
+            {
+                Music.stop[input1["channel"]] = "Resume";
+                button5.Text = "⏸";
+            }
+            //暫停播放
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Music.skip[input1["channel"]] = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Music.record[input1["channel"]] = true;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (Music.random[input1["channel"]])
+            {
+                Music.random[input1["channel"]] = false;
+                button7.Text = "🔁";
+            }
+            else
+            {
+                Music.random[input1["channel"]] = true;
+                button7.Text = "🔀";
+            }
         }
     }
 }
