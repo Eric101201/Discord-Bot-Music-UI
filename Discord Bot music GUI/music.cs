@@ -59,6 +59,7 @@ namespace Discord_Bot_music_GUI
             var guild = Program._client.GetGuild(GuildId);
             var channel = guild.GetVoiceChannel(ChannelId);
             var audioClient = await channel.ConnectAsync();
+            Program.Log2("w22");
             var Description = audioClient.ConnectionState;
             bool IsPlay = false;
             var tokenSource = new CancellationTokenSource();
