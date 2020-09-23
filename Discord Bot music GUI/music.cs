@@ -73,18 +73,21 @@ namespace Discord_Bot_music_GUI
             int w = 0;
             while (true)
             {
-                if (break1[ChannelId]) {
-                    ffmpeg.CloseMainWindow();
-                    token.ThrowIfCancellationRequested();
-                    await channel.DisconnectAsync();
-                    break1.Remove(ChannelId);
-                    break; 
-                };
-                DirectoryInfo di = new DirectoryInfo(@"F:\音樂");
-                var files = di.GetFiles();
-                if (Description.ToString() != "Disconnected" || Description.ToString() != "Disconnecting")
+                Program.Log2("w");
+                try
                 {
-                    try
+                    if (break1[ChannelId])
+                    {
+                        ffmpeg.CloseMainWindow();
+                        token.ThrowIfCancellationRequested();
+                        await channel.DisconnectAsync();
+                        break1.Remove(ChannelId);
+                        IsPlay = false;
+                        break;
+                    };
+                    DirectoryInfo di = new DirectoryInfo(@"F:\音樂");
+                    var files = di.GetFiles();
+                    if (Description.ToString() != "Disconnected" || Description.ToString() != "Disconnecting")
                     {
                         if (record[ChannelId])
                         {
@@ -99,7 +102,7 @@ namespace Discord_Bot_music_GUI
                             skip[ChannelId] = false;
                             stop[ChannelId] = "false";
                         };
-                        if (IsPlay && stop[ChannelId]== "Resume")
+                        if (IsPlay && stop[ChannelId] == "Resume")
                         {
                             foreach (ProcessThread thread in ffmpeg.Threads)
                             {
@@ -112,12 +115,11 @@ namespace Discord_Bot_music_GUI
                             }
                             stop[ChannelId] = "false";
                         };
-                        if (IsPlay == false && stop[ChannelId]!= "Suspend")
+                        if (IsPlay == false && stop[ChannelId] != "Suspend")
                         {
-                            Program.Log2(files[w].Name);
                             if (record[ChannelId])
                             {
-                                w = list1[list1.Count-2];
+                                w = list1[list1.Count - 2];
                                 list1.Remove(list1.Count - 1);
                                 record[ChannelId] = false;
                             }
@@ -130,7 +132,6 @@ namespace Discord_Bot_music_GUI
                                 }
                                 else
                                 {
-                                    w += 1;
                                     if (w >= files.Length - 1)
                                     {
                                         w = 0;
@@ -139,11 +140,12 @@ namespace Discord_Bot_music_GUI
                                 list1.Add(w);
                             }
                             IsPlay = true;
+                            Program.Log2(files[w].Name);
                             ffmpeg = CreateStream($"F:\\音樂\\{files[w].Name}", 1);
-                            var taskA = Task.Run(() => SendAsync(audioClient, ffmpeg),token);
-                            taskA.ContinueWith(w => { IsPlay = false; });
+                            var taskA = Task.Run(() => SendAsync(audioClient, ffmpeg), token);
+                            taskA.ContinueWith(r => { IsPlay = false; w += 1; });
                         };
-                        if (IsPlay && stop[ChannelId]=="true")
+                        if (IsPlay && stop[ChannelId] == "true")
                         {
                             foreach (ProcessThread thread in ffmpeg.Threads)
                             {
@@ -156,12 +158,16 @@ namespace Discord_Bot_music_GUI
                             }
                             stop[ChannelId] = "Suspend";
                         }
-                        await Task.Delay(5000);
+                        await Task.Delay(1000);
                     }
-                    catch (Exception)
-                    {
-                        audioClient = await channel.ConnectAsync();
-                    } 
+                }
+                catch (Exception)
+                {
+                    ffmpeg.CloseMainWindow();
+                    token.ThrowIfCancellationRequested();
+                    await channel.DisconnectAsync();
+                    IsPlay = false;
+                    break;
                 }
             }
         }
