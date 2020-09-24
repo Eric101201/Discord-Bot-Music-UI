@@ -18,16 +18,17 @@ namespace Discord_Bot_music_GUI
         private static IServiceProvider _services;
         private static CommandService _commands;
         public static DiscordSocketClient _client;
-        public static char Prefix = '!';
-        public static string Token = "NzM2MDcwODQzOTY0MzI1OTQ4.XxpdZA.vEH51-aiajNrkE0S65kkWYtnjbE";
+        public static char Prefix;
+        public static string Token ;
         public static List<string> Logtext = new List<string> { };
-        public static bool switch1 = true;
+        public static bool switch1 = false;
 
         [STAThread]
         static async Task  Main()
         {
-            var breakfastTasks = new List<Task> { Ran1(),Ran2()};
-            await Task.WhenAll(breakfastTasks);
+            //var breakfastTasks = new List<Task> { Ran1(),Ran2()};
+            await Task.Run(async() => { await Ran2(); });
+            //await Task.WhenAll(breakfastTasks);
         }
         static async Task Ran1()
         {
@@ -45,7 +46,6 @@ namespace Discord_Bot_music_GUI
                 //Win32.SetParent(foas.Handle, Form1.programIntPtr);
                 //foas.Show();
                 Application.Run(new Form1());
-                
             }
             await Task.Run(() => w());
         }
@@ -54,7 +54,6 @@ namespace Discord_Bot_music_GUI
             DateTime myDate = DateTime.Now;
             string myDateString = myDate.ToString("HH:mm:ss");
             Logtext.Add(myDateString+ " WriteLine     " + Log + Environment.NewLine);
-            
         }
         private static Task Log(LogMessage msg)
         {
