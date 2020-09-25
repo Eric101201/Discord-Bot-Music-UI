@@ -13,7 +13,7 @@ using Discord.Commands;
 using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-namespace Discord_Bot_music_GUI
+namespace PascalCase
 {
     public partial class Form1 : Form
     {
@@ -129,7 +129,7 @@ namespace Discord_Bot_music_GUI
             }
             Program.Stop();
         }
-        private void button_Start(object sender,s EventArgs e)
+        private void button_Start(object sender, EventArgs e)
         {
             if (textBox3.Text == "" || textBox5.Text == "")
             {

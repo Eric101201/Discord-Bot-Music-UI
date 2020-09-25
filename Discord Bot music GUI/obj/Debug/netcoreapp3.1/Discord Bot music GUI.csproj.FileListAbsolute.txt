@@ -1,7 +1,5 @@
 F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\bin\Debug\netcoreapp3.1\Discord Bot music GUI.exe
 F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\Discord Bot music GUI.csprojAssemblyReference.cache
-F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\Discord_Bot_music_GUI.Form1.resources
-F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\Discord_Bot_music_GUI.Properties.Resources.resources
 F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\Discord Bot music GUI.csproj.GenerateResource.cache
 F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\Discord Bot music GUI.AssemblyInfoInputs.cache
 F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\Discord Bot music GUI.AssemblyInfo.cs
@@ -26,3 +24,5 @@ F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcore
 F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\Discord Bot music GUI.genruntimeconfig.cache
 F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\opus.dll
 F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\Discord Bot music GUI.csproj.CoreCompileInputs.cache
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\PascalCase.Form1.resources
+F:\程式開發\C#\Discord Bot music GUI\Discord Bot music GUI\obj\Debug\netcoreapp3.1\PascalCase.Properties.Resources.resources

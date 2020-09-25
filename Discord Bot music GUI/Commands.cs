@@ -9,7 +9,7 @@ using System.IO;
 using Discord.Audio;
 using System.Diagnostics;
 
-namespace Discord_Bot_music_GUI
+namespace PascalCase
 {
     public class InfoModule : ModuleBase<SocketCommandContext>
     {

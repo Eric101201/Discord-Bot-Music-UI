@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Discord_Bot_music_GUI
+namespace PascalCase
 {
     [Flags]
     public enum ThreadAccess : int

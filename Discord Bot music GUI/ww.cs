@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Discord_Bot_music_GUI
+namespace PascalCase
 {
     public static class Win32
     {

@@ -5,7 +5,7 @@ using Discord.WebSocket;
 using Discord.Commands;
 using Discord;
 using System.Threading.Tasks;
-namespace Discord_Bot_music_GUI
+namespace PascalCase
 {
     public class HelpModule : ModuleBase<SocketCommandContext>
     {

@@ -1,4 +1,4 @@
-﻿namespace Discord_Bot_music_GUI
+﻿namespace PascalCase
 {
     partial class Form1
     {
@@ -6,7 +6,7 @@
         ///  Required designer variable.
         /// </summary>
         /// 
-        
+
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>

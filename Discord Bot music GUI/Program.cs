@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics;
 using Discord.Audio;
 
-namespace Discord_Bot_music_GUI
+namespace PascalCase
 {
     static class Program
     {
