@@ -123,13 +123,13 @@ namespace Discord_Bot_music_GUI
         }
         private void button_stop(object sender , EventArgs e)
         {
-            Program.Stop();
             foreach(var i in Music.break1.Keys.ToList())
             {
                 Music.break1[i] = true;
             }
+            Program.Stop();
         }
-        private void button_Start(object sender, EventArgs e)
+        private void button_Start(object sender,s EventArgs e)
         {
             if (textBox3.Text == "" || textBox5.Text == "")
             {
