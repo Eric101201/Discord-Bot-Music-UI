@@ -25,6 +25,7 @@ namespace Discord_Bot_music_GUI
     }
     class Music
     {
+        public static string ph;
         public static Dictionary<ulong,bool> record = new Dictionary<ulong,bool>();
         public static Dictionary<ulong,bool> random=  new  Dictionary<ulong, bool> ();
         public static Dictionary<ulong, string> stop = new Dictionary<ulong, string>();
@@ -73,7 +74,6 @@ namespace Discord_Bot_music_GUI
             int w = 0;
             while (true)
             {
-                Program.Log2("w");
                 try
                 {
                     if (break1[ChannelId])
@@ -82,10 +82,14 @@ namespace Discord_Bot_music_GUI
                         token.ThrowIfCancellationRequested();
                         await channel.DisconnectAsync();
                         break1.Remove(ChannelId);
+                        random.Remove(ChannelId);
+                        skip.Remove(ChannelId);
+                        record.Remove(ChannelId);
+                        stop.Remove(ChannelId);
                         IsPlay = false;
                         break;
                     };
-                    DirectoryInfo di = new DirectoryInfo(@"F:\音樂");
+                    DirectoryInfo di = new DirectoryInfo(ph);
                     var files = di.GetFiles();
                     if (Description.ToString() != "Disconnected" || Description.ToString() != "Disconnecting")
                     {
@@ -141,7 +145,7 @@ namespace Discord_Bot_music_GUI
                             }
                             IsPlay = true;
                             Program.Log2(files[w].Name);
-                            ffmpeg = CreateStream($"F:\\音樂\\{files[w].Name}", 1);
+                            ffmpeg = CreateStream( ph+ "\\" + files[w].Name, 1);
                             var taskA = Task.Run(() => SendAsync(audioClient, ffmpeg), token);
                             taskA.ContinueWith(r => { IsPlay = false; w += 1; });
                         };
@@ -166,6 +170,10 @@ namespace Discord_Bot_music_GUI
                     ffmpeg.CloseMainWindow();
                     token.ThrowIfCancellationRequested();
                     await channel.DisconnectAsync();
+                    random.Remove(ChannelId);
+                    skip.Remove(ChannelId);
+                    record.Remove(ChannelId);
+                    stop.Remove(ChannelId);
                     IsPlay = false;
                     break;
                 }

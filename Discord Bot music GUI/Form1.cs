@@ -10,7 +10,9 @@ using System.Windows.Forms;
 using Discord;
 using Discord.WebSocket;
 using Discord.Commands;
-
+using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 namespace Discord_Bot_music_GUI
 {
     public partial class Form1 : Form
@@ -48,10 +50,35 @@ namespace Discord_Bot_music_GUI
                 }, IntPtr.Zero);
             }
         }
+        private readonly String PATH = String.Format(@"test.json", Directory.GetCurrentDirectory());
+        private void re(string Token,char Pr,string Ph)
+        {
+            Dictionary<string, string> jsontext = new Dictionary<string, string>();
+            jsontext.Add("Token", Token);
+            jsontext.Add("Pr", Pr.ToString());
+            jsontext.Add("Ph", Ph);
+            string j = JsonConvert.SerializeObject(jsontext);
+            File.WriteAllText(PATH, j, Encoding.UTF8);
+
+
+        }
         public Form1()
         {
             InitializeComponent();
             timer1.Start();
+            try
+            {
+                StreamReader sr = File.OpenText(PATH);
+                string jsonWordTemplate = sr.ReadToEnd();
+                var dTemlate = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonWordTemplate);
+                textBox5.Text = dTemlate["Token"];
+                textBox3.Text = dTemlate["Pr"];
+                textBox12.Text = dTemlate["Ph"];
+                sr.Close();
+            }
+            catch (Exception)
+            {
+            }
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -96,11 +123,26 @@ namespace Discord_Bot_music_GUI
         }
         private void button_stop(object sender , EventArgs e)
         {
+            foreach(var i in Music.break1.Keys.ToList())
+            {
+                Music.break1[i] = true;
+            }
             Program.Stop();
         }
-        private void button_Start(object sender, EventArgs e)
+        private void button_Start(object sender,s EventArgs e)
         {
-            Program.Start();
+            if (textBox3.Text == "" || textBox5.Text == "")
+            {
+                Program.Log2("Token or Prefix not Fill in");
+            }
+            else if(Program.switch1==false)
+            {
+                Program.Prefix = textBox3.Text.ToCharArray()[0];
+                Program.Token = textBox5.Text;
+                Music.ph = textBox12.Text;
+                re(textBox5.Text, textBox3.Text.ToCharArray()[0], textBox12.Text);
+                Program.Start();
+            }
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -254,6 +296,11 @@ namespace Discord_Bot_music_GUI
                 Music.random[input1["channel"]] = true;
                 button7.Text = "🔀";
             }
+        }
+
+
+        private void wwwe(object sender, EventArgs e)
+        {
         }
     }
 }
